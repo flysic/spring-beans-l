@@ -1,21 +1,21 @@
-package org.mchien.spring_beans_l.core;
+package org.machine.spring_beans_l.core;
 
 import junit.framework.Assert;
 
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-import org.machine.spring_beans_l.core.MySimpleAliasRegistry;
+import org.machine.spring_beans_l.core.SimpleAliasRegistry;
 import org.springframework.core.AliasRegistry;
 
-public class MySimpleAliasRegistryTest {
+public class SimpleAliasRegistryTest {
 	
 	private AliasRegistry registry;
 	private String ORI_SERVICE = "userService"; 
 
 	@Before
 	public void setUp() throws Exception {
-		registry = new MySimpleAliasRegistry();
+		registry = new SimpleAliasRegistry();
 	}
 
 	@After

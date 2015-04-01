@@ -9,11 +9,11 @@ import org.springframework.core.AliasRegistry;
 import org.springframework.util.Assert;
 import org.springframework.util.StringUtils;
 
-public class MySimpleAliasRegistry implements AliasRegistry {
+public class SimpleAliasRegistry implements AliasRegistry {
 
 	private Map<String, String> aliasMap;
 
-	public MySimpleAliasRegistry() {
+	public SimpleAliasRegistry() {
 		this.aliasMap = new ConcurrentHashMap<String, String>(16);
 	}
 
@@ -28,6 +28,11 @@ public class MySimpleAliasRegistry implements AliasRegistry {
 		this.aliasMap.put(alias, name);
 	}
 
+	/**
+	 * 验证循环别名，如果出现循环别名，抛出{@link IllegalStateException}
+	 * @param name beanName
+	 * @param alias 
+	 */
 	private void checkCircle(String name, String alias) {
 		String alias1;
 		do {
