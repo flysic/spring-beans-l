@@ -2,6 +2,9 @@ package org.machine.spring_beans_l;
 
 import org.machine.spring_beans_l.entity.User;
 import org.machine.spring_beans_l.service.UserService;
+import org.machine.spring_beans_l.service.impl.UserServiceImpl;
+import org.springframework.beans.factory.BeanFactory;
+import org.springframework.beans.factory.BeanFactoryUtils;
 import org.springframework.beans.factory.config.BeanDefinition;
 import org.springframework.beans.factory.support.DefaultListableBeanFactory;
 import org.springframework.beans.factory.xml.XmlBeanDefinitionReader;
@@ -33,6 +36,8 @@ public class DefaultListableBeanApplication {
 		
 		Assert.notNull(user);
 		System.out.println(user.getName() + " " + user.getAge());
+		
+		System.out.println(factory.getBeanDefinitionNames().length);
 	}
 
 }

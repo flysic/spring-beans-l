@@ -10,7 +10,7 @@ public class ClassPathXmlApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(ClassPathXmlApplication.class, args);
 		FileSystemXmlApplicationContext context = new FileSystemXmlApplicationContext("src/main/resources/applicationConfigure.xml");
-		UserService userService = (UserService)context.getBean("userService");
+		UserService userService = (UserService)context.getBean(UserService.class);
 		User user = userService.find("shao");
 		System.out.println(user.getName() + " " + user.getAge());
 		context.close();
